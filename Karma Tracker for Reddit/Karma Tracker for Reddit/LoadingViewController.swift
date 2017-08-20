@@ -12,6 +12,7 @@ class LoadingViewController: UIViewController {
 
     @IBOutlet weak var image: UIImageView!
     
+    @IBOutlet weak var currentLoadingItem: UILabel!
     var username: String?
     
     override func viewDidLoad() {
@@ -97,6 +98,9 @@ class LoadingViewController: UIViewController {
                     let unixTime = commentData["created_utc"] as! Int
                     let subreddit = commentData["subreddit_name_prefixed"] as! String
                     SharedData.shared.add(comment: Comment(score: score, unixTime: unixTime, subreddit: subreddit))
+                    DispatchQueue.main.sync {
+                        self.currentLoadingItem.text = "\(score > 0 ? "+" : "")\(score): \(subreddit)"
+                    }
                 }
                 if let after = jsonData["after"] as? String {
                     self.recursiveGetCommentsListing(paramAfter: after, ifNetworkFail: ifNetworkFail, ifDataFail: ifDataFail, ifFinish: ifFinish)
@@ -140,7 +144,9 @@ class LoadingViewController: UIViewController {
                     let unixTime = submittedData["created_utc"] as! Int
                     let subreddit = submittedData["subreddit_name_prefixed"] as! String
                     SharedData.shared.add(submission: Submission(score: score, unixTime: unixTime, subreddit: subreddit))
-                    print("submitted: \(subreddit)")
+                    DispatchQueue.main.sync {
+                        self.currentLoadingItem.text = "\(score > 0 ? "+" : "")\(score): \(subreddit)"
+                    }
                 }
                 if let after = jsonData["after"] as? String {
                     self.recursiveGetSubmittedListing(paramAfter: after, ifNetworkFail: ifNetworkFail, ifDataFail: ifDataFail, ifFinish: ifFinish)

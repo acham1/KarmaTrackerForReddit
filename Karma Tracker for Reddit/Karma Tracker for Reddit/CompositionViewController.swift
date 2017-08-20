@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  CompositionViewController
 //  Karma Tracker for Reddit
 //
 //  Created by Alan Cham on 8/10/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class CompositionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

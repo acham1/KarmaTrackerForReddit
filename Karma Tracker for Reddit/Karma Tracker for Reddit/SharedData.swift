@@ -53,6 +53,14 @@ class SharedData {
         submissions = nil
     }
     
+    func getComments() -> [Comment]? {
+        return comments
+    }
+    
+    func getSubmissions() -> [Submission]? {
+        return submissions
+    }
+    
     func commit() {
         
     }
