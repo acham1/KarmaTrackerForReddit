@@ -29,7 +29,7 @@ class CompositionViewController: UIViewController, IValueFormatter {
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         pieChartData.setValueFormatter(self)
         
-        pieChartView.noDataText = "This user account has no data"
+        pieChartView.noDataText = "This user account has no data for this chart."
         pieChartView.layer.borderWidth = 1
         pieChartView.layer.borderColor = UIColor.gray.cgColor
         if SharedData.shared.numComments > 0 || SharedData.shared.numSubmitted > 0 {

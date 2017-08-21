@@ -19,7 +19,7 @@ class HistoryViewController: UIViewController, IAxisValueFormatter {
     }
     
     func setUpLineChart() {
-        lineChartView.noDataText = "This user account has no data."
+        lineChartView.noDataText = "This user account has no data for this chart."
         let lineChartData = LineChartData()
         if let comments = setUpCommentsData(), comments.entryCount > 0 {
             lineChartData.addDataSet(comments)

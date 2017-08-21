@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Submission {
+class Submission: AccountElement {
     let score: Int
     let unixTime: Int
     let subreddit: String

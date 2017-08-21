@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Comment {
+class Comment: AccountElement {
     let score: Int
     let unixTime: Int
     let subreddit: String

@@ -12,6 +12,8 @@
 		AA0EABBA1F43AC7E00B48590 /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0EABB91F43AC7E00B48590 /* Submission.swift */; };
 		AA40F69F1F4AAD09008E3DDE /* RankingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40F69E1F4AAD09008E3DDE /* RankingPageViewController.swift */; };
 		AA40F6A21F4AB88A008E3DDE /* RankingBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40F6A11F4AB88A008E3DDE /* RankingBarViewController.swift */; };
+		AA40F6A41F4AE5AC008E3DDE /* KarmaSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40F6A31F4AE5AC008E3DDE /* KarmaSource.swift */; };
+		AA40F6A61F4B755A008E3DDE /* AccountElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40F6A51F4B755A008E3DDE /* AccountElement.swift */; };
 		AA4D85541F46266500C9E182 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D85531F46266500C9E182 /* InformationViewController.swift */; };
 		AA4D85561F464FDB00C9E182 /* String+isValidRedditUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D85551F464FDB00C9E182 /* String+isValidRedditUsername.swift */; };
 		AA4D85581F47B84A00C9E182 /* LoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D85571F47B84A00C9E182 /* LoadingError.swift */; };
@@ -90,6 +92,8 @@
 		AA0EABB91F43AC7E00B48590 /* Submission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Submission.swift; sourceTree = "<group>"; };
 		AA40F69E1F4AAD09008E3DDE /* RankingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingPageViewController.swift; sourceTree = "<group>"; };
 		AA40F6A11F4AB88A008E3DDE /* RankingBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingBarViewController.swift; sourceTree = "<group>"; };
+		AA40F6A31F4AE5AC008E3DDE /* KarmaSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KarmaSource.swift; sourceTree = "<group>"; };
+		AA40F6A51F4B755A008E3DDE /* AccountElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountElement.swift; sourceTree = "<group>"; };
 		AA4D85531F46266500C9E182 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		AA4D85551F464FDB00C9E182 /* String+isValidRedditUsername.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+isValidRedditUsername.swift"; sourceTree = "<group>"; };
 		AA4D85571F47B84A00C9E182 /* LoadingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingError.swift; sourceTree = SOURCE_ROOT; };
@@ -174,6 +178,7 @@
 		AA6239E01F3C3C670010E6FF /* Karma Tracker for Reddit */ = {
 			isa = PBXGroup;
 			children = (
+				AA40F6A51F4B755A008E3DDE /* AccountElement.swift */,
 				AA6BAAC01F3F848800CA773D /* AppConstants.swift */,
 				AA6239E11F3C3C670010E6FF /* AppDelegate.swift */,
 				AA6239EA1F3C3C670010E6FF /* Assets.xcassets */,
@@ -183,17 +188,18 @@
 				AA6239E31F3C3C670010E6FF /* HistoryViewController.swift */,
 				AA6239EF1F3C3C670010E6FF /* Info.plist */,
 				AA4D85531F46266500C9E182 /* InformationViewController.swift */,
+				AA40F6A31F4AE5AC008E3DDE /* KarmaSource.swift */,
 				AA6239EC1F3C3C670010E6FF /* LaunchScreen.storyboard */,
 				AA4D85571F47B84A00C9E182 /* LoadingError.swift */,
 				AA623A131F3C5D910010E6FF /* LoadingViewController.swift */,
 				AA6239E71F3C3C670010E6FF /* Main.storyboard */,
+				AA40F6A11F4AB88A008E3DDE /* RankingBarViewController.swift */,
 				AA40F69E1F4AAD09008E3DDE /* RankingPageViewController.swift */,
 				AA0EABB51F43AB4B00B48590 /* SharedData.swift */,
 				AA6BAAC21F3FBCE300CA773D /* SharedNetworking.swift */,
 				AA4D85551F464FDB00C9E182 /* String+isValidRedditUsername.swift */,
 				AA0EABB91F43AC7E00B48590 /* Submission.swift */,
 				AA623A111F3C3D4A0010E6FF /* UserSelectionViewController.swift */,
-				AA40F6A11F4AB88A008E3DDE /* RankingBarViewController.swift */,
 			);
 			path = "Karma Tracker for Reddit";
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 				AA6239E61F3C3C670010E6FF /* CompositionViewController.swift in Sources */,
 				AA623A141F3C5D910010E6FF /* LoadingViewController.swift in Sources */,
 				AA40F69F1F4AAD09008E3DDE /* RankingPageViewController.swift in Sources */,
+				AA40F6A41F4AE5AC008E3DDE /* KarmaSource.swift in Sources */,
 				AA0EABB81F43AC7100B48590 /* Comment.swift in Sources */,
 				AA40F6A21F4AB88A008E3DDE /* RankingBarViewController.swift in Sources */,
 				AA6BAAC11F3F848800CA773D /* AppConstants.swift in Sources */,
@@ -393,6 +400,7 @@
 				AA6239E21F3C3C670010E6FF /* AppDelegate.swift in Sources */,
 				AA623A161F3C5E170010E6FF /* DetailTabBarController.swift in Sources */,
 				AA6239E41F3C3C670010E6FF /* HistoryViewController.swift in Sources */,
+				AA40F6A61F4B755A008E3DDE /* AccountElement.swift in Sources */,
 				AA4D85541F46266500C9E182 /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

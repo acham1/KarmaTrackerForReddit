@@ -10,24 +10,42 @@ import UIKit
 
 class RankingPageViewController: UIPageViewController, UIPageViewControllerDataSource {
 
+    let barViewControllers = [
+        RankingPageViewController.getBarViewController(sourceType: .comments),
+        RankingPageViewController.getBarViewController(sourceType: .posts)
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.dataSource = self
+
+        if let postsPage = barViewControllers.first {
+            setViewControllers([postsPage], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    
+    private static func getBarViewController(sourceType: KarmaSource) -> RankingBarViewController {
+        let viewController = UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewController(withIdentifier: "\(sourceType)Ranking") as! RankingBarViewController
+        viewController.sourceType = sourceType
+        return viewController
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @available(iOS 5.0, *)
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        if barViewControllers.index(of: viewController as! RankingBarViewController) == 0 {
+            return barViewControllers[1]
+        }
         return nil
     }
 
     @available(iOS 5.0, *)
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        if barViewControllers.index(of: viewController as! RankingBarViewController) == 1 {
+            return barViewControllers[0]
+        }
         return nil
     }
 
@@ -36,7 +54,11 @@ class RankingPageViewController: UIPageViewController, UIPageViewControllerDataS
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return 1
+        guard let firstViewController = viewControllers?.first,
+            let firstViewControllerIndex = barViewControllers.index(of: firstViewController as! RankingBarViewController) else {
+                return 0
+        }
+        return firstViewControllerIndex
     }
     
     /*

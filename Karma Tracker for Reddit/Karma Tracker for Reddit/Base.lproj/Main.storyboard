@@ -230,29 +230,43 @@
         <!--Ranking Bar View Controller-->
         <scene sceneID="9aH-ef-pay">
             <objects>
-                <viewController storyboardIdentifier="commentRanking" id="QI2-eb-ccL" customClass="RankingBarViewController" customModule="Karma_Tracker_for_Reddit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="commentsRanking" id="QI2-eb-ccL" customClass="RankingBarViewController" customModule="Karma_Tracker_for_Reddit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tGW-tS-kpg"/>
                         <viewControllerLayoutGuide type="bottom" id="tiz-In-E2R"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gj9-DG-Uqu">
-                        <rect key="frame" x="0.0" y="0.0" width="288" height="455"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Jl-O9-RA9">
-                                <rect key="frame" x="0.0" y="69.5" width="288" height="315.5"/>
+                                <rect key="frame" x="20" y="74" width="280" height="307.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bo-hV-02d">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="19.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2K-sF-tuD" customClass="BarChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="27.5" width="288" height="288"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="280" height="280"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vj-GC-eio">
+                                                <rect key="frame" x="8" y="8" width="264" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
                                         <constraints>
+                                            <constraint firstItem="1vj-GC-eio" firstAttribute="top" secondItem="Y2K-sF-tuD" secondAttribute="top" constant="8" id="U9V-D6-mH1"/>
+                                            <constraint firstAttribute="trailing" secondItem="1vj-GC-eio" secondAttribute="trailing" constant="8" id="ZP7-oa-xuc"/>
                                             <constraint firstAttribute="width" secondItem="Y2K-sF-tuD" secondAttribute="height" multiplier="1:1" id="jKB-at-h7K"/>
+                                            <constraint firstItem="1vj-GC-eio" firstAttribute="leading" secondItem="Y2K-sF-tuD" secondAttribute="leading" constant="8" id="xrR-M3-nvy"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -264,19 +278,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5Jl-O9-RA9" firstAttribute="leading" secondItem="Gj9-DG-Uqu" secondAttribute="leading" id="LKz-7p-8pn"/>
-                            <constraint firstAttribute="trailing" secondItem="5Jl-O9-RA9" secondAttribute="trailing" id="fto-c6-JF3"/>
+                            <constraint firstItem="5Jl-O9-RA9" firstAttribute="leading" secondItem="Gj9-DG-Uqu" secondAttribute="leading" constant="20" id="LKz-7p-8pn"/>
+                            <constraint firstAttribute="trailing" secondItem="5Jl-O9-RA9" secondAttribute="trailing" constant="20" id="fto-c6-JF3"/>
                             <constraint firstItem="5Jl-O9-RA9" firstAttribute="centerY" secondItem="Gj9-DG-Uqu" secondAttribute="centerY" id="yRK-wJ-aaF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="barChartView" destination="Y2K-sF-tuD" id="CWa-Kc-sVh"/>
+                        <outlet property="selectedLabel" destination="1vj-GC-eio" id="QaF-Hc-lCC"/>
                         <outlet property="titleLabel" destination="0bo-hV-02d" id="jqC-u9-v1C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ft-jy-tEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1751" y="879"/>
+            <point key="canvasLocation" x="1749.375" y="878.34507042253517"/>
         </scene>
         <!--Ranking-->
         <scene sceneID="vIE-6n-NQH">
@@ -303,9 +318,10 @@
                                 </items>
                             </navigationBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1K-uN-9DM">
-                                <rect key="frame" x="16" y="64" width="288" height="455"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" red="0.8316049124910424" green="0.8316049124910424" blue="0.8316049124910424" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
-                                    <segue destination="s3P-bR-oKV" kind="embed" id="h8h-OE-1fU"/>
+                                    <segue destination="hJm-2F-diN" kind="embed" id="rIg-ao-L4i"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -314,9 +330,9 @@
                             <constraint firstAttribute="trailing" secondItem="wWp-Dr-fdp" secondAttribute="trailing" id="19W-Rd-Qmg"/>
                             <constraint firstItem="wWp-Dr-fdp" firstAttribute="top" secondItem="zp7-Vm-P9d" secondAttribute="bottom" id="51H-GW-QgT"/>
                             <constraint firstItem="p1K-uN-9DM" firstAttribute="top" secondItem="wWp-Dr-fdp" secondAttribute="bottom" id="Mwz-Se-tb3"/>
-                            <constraint firstItem="p1K-uN-9DM" firstAttribute="leading" secondItem="ZKm-6u-CaH" secondAttribute="leadingMargin" id="Nao-Mt-ede"/>
                             <constraint firstItem="wWp-Dr-fdp" firstAttribute="leading" secondItem="ZKm-6u-CaH" secondAttribute="leading" id="UHY-Cq-YCe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="p1K-uN-9DM" secondAttribute="trailing" id="kue-8k-S1o"/>
+                            <constraint firstItem="p1K-uN-9DM" firstAttribute="leading" secondItem="ZKm-6u-CaH" secondAttribute="leading" id="YUR-wQ-P9b"/>
+                            <constraint firstAttribute="trailing" secondItem="p1K-uN-9DM" secondAttribute="trailing" id="atu-a4-MvK"/>
                             <constraint firstItem="FKK-Jt-Yqg" firstAttribute="top" secondItem="p1K-uN-9DM" secondAttribute="bottom" id="mfY-Sq-7E2"/>
                         </constraints>
                     </view>
@@ -330,29 +346,43 @@
         <!--Ranking Bar View Controller-->
         <scene sceneID="Vx9-Et-oNE">
             <objects>
-                <viewController storyboardIdentifier="postRanking" id="4ic-Av-JaC" customClass="RankingBarViewController" customModule="Karma_Tracker_for_Reddit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="postsRanking" id="4ic-Av-JaC" customClass="RankingBarViewController" customModule="Karma_Tracker_for_Reddit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WMp-hY-vHk"/>
                         <viewControllerLayoutGuide type="bottom" id="IB0-9c-mLr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zt8-Pm-6Ks">
-                        <rect key="frame" x="0.0" y="0.0" width="288" height="455"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gyg-yf-yvX">
-                                <rect key="frame" x="0.0" y="70" width="288" height="315.5"/>
+                                <rect key="frame" x="20" y="74.5" width="280" height="307.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFI-fu-ntS">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="19.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcE-li-Rb5" customClass="BarChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="27.5" width="288" height="288"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="280" height="280"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUs-Mc-Eys">
+                                                <rect key="frame" x="8" y="8" width="264" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IcE-li-Rb5" secondAttribute="height" multiplier="1:1" id="B7P-rh-xOw"/>
+                                            <constraint firstAttribute="trailing" secondItem="RUs-Mc-Eys" secondAttribute="trailing" constant="8" id="DnO-Ca-iM3"/>
+                                            <constraint firstItem="RUs-Mc-Eys" firstAttribute="leading" secondItem="IcE-li-Rb5" secondAttribute="leading" constant="8" id="Ydw-Wc-Cqx"/>
+                                            <constraint firstItem="RUs-Mc-Eys" firstAttribute="top" secondItem="IcE-li-Rb5" secondAttribute="top" constant="8" id="h6z-W3-JbM"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -360,19 +390,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gyg-yf-yvX" secondAttribute="trailing" id="4p1-0f-jl0"/>
-                            <constraint firstItem="gyg-yf-yvX" firstAttribute="leading" secondItem="zt8-Pm-6Ks" secondAttribute="leading" id="C0b-wt-q38"/>
+                            <constraint firstAttribute="trailing" secondItem="gyg-yf-yvX" secondAttribute="trailing" constant="20" id="4p1-0f-jl0"/>
+                            <constraint firstItem="gyg-yf-yvX" firstAttribute="leading" secondItem="zt8-Pm-6Ks" secondAttribute="leading" constant="20" id="C0b-wt-q38"/>
                             <constraint firstItem="gyg-yf-yvX" firstAttribute="centerY" secondItem="zt8-Pm-6Ks" secondAttribute="centerY" id="yTP-fL-U8R"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="barChartView" destination="IcE-li-Rb5" id="1JT-cF-2SU"/>
+                        <outlet property="selectedLabel" destination="RUs-Mc-Eys" id="uPJ-Z9-FNS"/>
                         <outlet property="titleLabel" destination="GFI-fu-ntS" id="ruA-5h-bso"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCi-Zp-OOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749" y="1446"/>
+            <point key="canvasLocation" x="1747.5" y="1445.5985915492959"/>
         </scene>
         <!--History-->
         <scene sceneID="pt3-FN-xyu">
@@ -809,22 +840,18 @@
             <point key="canvasLocation" x="-1514" y="0.0"/>
         </scene>
         <!--Ranking Page View Controller-->
-        <scene sceneID="Lkk-lz-vwJ">
+        <scene sceneID="KRG-XS-jhm">
             <objects>
-                <viewController id="s3P-bR-oKV" customClass="RankingPageViewController" customModule="Karma_Tracker_for_Reddit" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7Ms-oq-uCI">
-                        <rect key="frame" x="0.0" y="0.0" width="288" height="455"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="hJm-2F-diN" customClass="RankingPageViewController" customModule="Karma_Tracker_for_Reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
-                        <segue destination="QI2-eb-ccL" kind="show" identifier="showCommentRanking" id="8w3-wF-btf"/>
-                        <segue destination="4ic-Av-JaC" kind="show" identifier="showPostRanking" id="xat-p1-rSR"/>
+                        <segue destination="QI2-eb-ccL" kind="show" identifier="showPostsRanking" id="8Lk-rY-dZf"/>
+                        <segue destination="4ic-Av-JaC" kind="show" identifier="showCommentsRanking" id="ckH-a3-fnt"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6nG-qG-gEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1m0-dm-KSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904" y="1225"/>
+            <point key="canvasLocation" x="874" y="1224"/>
         </scene>
     </scenes>
     <resources>
