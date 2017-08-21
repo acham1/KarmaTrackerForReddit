@@ -15,8 +15,6 @@
         <!--View Controller-->
         <scene sceneID="YtO-y4-QRP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KR1-kl-MrL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="AKC-ut-IOM" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="0je-ph-iCo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4dv-TZ-Byx"/>
@@ -36,7 +34,7 @@
                                 <rect key="frame" x="16" y="154" width="288" height="365"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ERJ-dt-8dY">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="633.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="583.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h51-rr-Cuh" userLabel="Total Score">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="211.5"/>
@@ -100,10 +98,10 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZ9-rZ-BJl">
-                                                <rect key="frame" x="0.0" y="583.5" width="288" height="50"/>
+                                                <rect key="frame" x="0.0" y="583.5" width="288" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="PXJ-AN-UTy"/>
+                                                    <constraint firstAttribute="height" id="PXJ-AN-UTy"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -154,6 +152,8 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KR1-kl-MrL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="AKC-ut-IOM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="874" y="-335"/>
         </scene>
@@ -169,19 +169,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="55" y="263" width="210" height="42"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="52" y="313" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEf-C3-lLx">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
@@ -194,27 +181,198 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zFP-J0-RSE">
+                                <rect key="frame" x="16" y="126.5" width="288" height="315.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Karma Source" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqa-6E-U3R">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4G0-gC-0um" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="27.5" width="288" height="288"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="4G0-gC-0um" secondAttribute="height" multiplier="1:1" id="qSs-iH-vzZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4G0-gC-0um" firstAttribute="leading" secondItem="zFP-J0-RSE" secondAttribute="leading" id="S3C-eL-Izg"/>
+                                    <constraint firstAttribute="trailing" secondItem="4G0-gC-0um" secondAttribute="trailing" id="ltI-Li-lAo"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
+                            <constraint firstItem="zFP-J0-RSE" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="DgR-ub-IaP"/>
                             <constraint firstAttribute="trailing" secondItem="dEf-C3-lLx" secondAttribute="trailing" id="ZuV-n3-TNY"/>
                             <constraint firstItem="dEf-C3-lLx" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="bFo-O1-af3"/>
                             <constraint firstItem="dEf-C3-lLx" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="cac-8y-JDq"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="zFP-J0-RSE" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="lI3-tl-lZh"/>
+                            <constraint firstItem="zFP-J0-RSE" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="p6c-Bh-CAp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Composition" image="icons8-Pie Chart-96" id="1sD-jQ-BN9"/>
                     <navigationItem key="navigationItem" id="iVd-Os-FlE">
                         <barButtonItem key="leftBarButtonItem" title="&lt; Select User" id="wFW-G4-y1d"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pieChartView" destination="4G0-gC-0um" id="1BR-ni-TbN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
                 <exit id="ZBK-Yl-pv8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="71" y="325"/>
+        </scene>
+        <!--Ranking Bar View Controller-->
+        <scene sceneID="9aH-ef-pay">
+            <objects>
+                <viewController storyboardIdentifier="commentRanking" id="QI2-eb-ccL" customClass="RankingBarViewController" customModule="Karma_Tracker_for_Reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tGW-tS-kpg"/>
+                        <viewControllerLayoutGuide type="bottom" id="tiz-In-E2R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gj9-DG-Uqu">
+                        <rect key="frame" x="0.0" y="0.0" width="288" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Jl-O9-RA9">
+                                <rect key="frame" x="0.0" y="69.5" width="288" height="315.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bo-hV-02d">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2K-sF-tuD" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="27.5" width="288" height="288"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Y2K-sF-tuD" secondAttribute="height" multiplier="1:1" id="jKB-at-h7K"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Y2K-sF-tuD" secondAttribute="trailing" id="KPK-3o-M6R"/>
+                                    <constraint firstItem="Y2K-sF-tuD" firstAttribute="leading" secondItem="5Jl-O9-RA9" secondAttribute="leading" id="U6r-4A-Dp5"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Jl-O9-RA9" firstAttribute="leading" secondItem="Gj9-DG-Uqu" secondAttribute="leading" id="LKz-7p-8pn"/>
+                            <constraint firstAttribute="trailing" secondItem="5Jl-O9-RA9" secondAttribute="trailing" id="fto-c6-JF3"/>
+                            <constraint firstItem="5Jl-O9-RA9" firstAttribute="centerY" secondItem="Gj9-DG-Uqu" secondAttribute="centerY" id="yRK-wJ-aaF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barChartView" destination="Y2K-sF-tuD" id="CWa-Kc-sVh"/>
+                        <outlet property="titleLabel" destination="0bo-hV-02d" id="jqC-u9-v1C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ft-jy-tEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1751" y="879"/>
+        </scene>
+        <!--Ranking-->
+        <scene sceneID="vIE-6n-NQH">
+            <objects>
+                <viewController id="ZW4-dm-m5w" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zp7-Vm-P9d"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKK-Jt-Yqg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZKm-6u-CaH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWp-Dr-fdp">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Ranking" id="UCP-8c-vLW">
+                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="stop" id="h4o-yp-Tfd">
+                                            <connections>
+                                                <segue destination="vYL-cW-tkg" kind="unwind" unwindAction="unwindFrom:" id="HHv-LQ-4LE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1K-uN-9DM">
+                                <rect key="frame" x="16" y="64" width="288" height="455"/>
+                                <connections>
+                                    <segue destination="s3P-bR-oKV" kind="embed" id="h8h-OE-1fU"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wWp-Dr-fdp" secondAttribute="trailing" id="19W-Rd-Qmg"/>
+                            <constraint firstItem="wWp-Dr-fdp" firstAttribute="top" secondItem="zp7-Vm-P9d" secondAttribute="bottom" id="51H-GW-QgT"/>
+                            <constraint firstItem="p1K-uN-9DM" firstAttribute="top" secondItem="wWp-Dr-fdp" secondAttribute="bottom" id="Mwz-Se-tb3"/>
+                            <constraint firstItem="p1K-uN-9DM" firstAttribute="leading" secondItem="ZKm-6u-CaH" secondAttribute="leadingMargin" id="Nao-Mt-ede"/>
+                            <constraint firstItem="wWp-Dr-fdp" firstAttribute="leading" secondItem="ZKm-6u-CaH" secondAttribute="leading" id="UHY-Cq-YCe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p1K-uN-9DM" secondAttribute="trailing" id="kue-8k-S1o"/>
+                            <constraint firstItem="FKK-Jt-Yqg" firstAttribute="top" secondItem="p1K-uN-9DM" secondAttribute="bottom" id="mfY-Sq-7E2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Ranking" image="icons8-Bar Chart-100" id="APh-Pc-WRF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="USf-Id-fQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vYL-cW-tkg" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="67.5" y="1224.2957746478874"/>
+        </scene>
+        <!--Ranking Bar View Controller-->
+        <scene sceneID="Vx9-Et-oNE">
+            <objects>
+                <viewController storyboardIdentifier="postRanking" id="4ic-Av-JaC" customClass="RankingBarViewController" customModule="Karma_Tracker_for_Reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WMp-hY-vHk"/>
+                        <viewControllerLayoutGuide type="bottom" id="IB0-9c-mLr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zt8-Pm-6Ks">
+                        <rect key="frame" x="0.0" y="0.0" width="288" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gyg-yf-yvX">
+                                <rect key="frame" x="0.0" y="70" width="288" height="315.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFI-fu-ntS">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcE-li-Rb5" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="27.5" width="288" height="288"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="IcE-li-Rb5" secondAttribute="height" multiplier="1:1" id="B7P-rh-xOw"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gyg-yf-yvX" secondAttribute="trailing" id="4p1-0f-jl0"/>
+                            <constraint firstItem="gyg-yf-yvX" firstAttribute="leading" secondItem="zt8-Pm-6Ks" secondAttribute="leading" id="C0b-wt-q38"/>
+                            <constraint firstItem="gyg-yf-yvX" firstAttribute="centerY" secondItem="zt8-Pm-6Ks" secondAttribute="centerY" id="yTP-fL-U8R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barChartView" destination="IcE-li-Rb5" id="1JT-cF-2SU"/>
+                        <outlet property="titleLabel" destination="GFI-fu-ntS" id="ruA-5h-bso"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCi-Zp-OOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749" y="1446"/>
         </scene>
         <!--History-->
         <scene sceneID="pt3-FN-xyu">
@@ -241,7 +399,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fWO-Fx-m1H">
-                                <rect key="frame" x="16" y="126.5" width="288" height="315.5"/>
+                                <rect key="frame" x="16" y="107.5" width="288" height="353.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Score v. Unix Timestamp (UTC)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eod-bq-LXZ">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="19.5"/>
@@ -256,44 +414,25 @@
                                             <constraint firstAttribute="width" secondItem="oGm-hs-p3r" secondAttribute="height" multiplier="1:1" id="mfI-Lk-aO9"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAl-Tw-3uS">
+                                        <rect key="frame" x="0.0" y="323.5" width="288" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="🛈 Understand These Results"/>
+                                        <connections>
+                                            <segue destination="0je-ph-iCo" kind="show" id="VSM-FO-1Z8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bd0-VM-feS">
-                                <rect key="frame" x="16" y="495.5" width="288" height="23.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAl-Tw-3uS">
-                                <rect key="frame" x="16" y="465.5" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="🛈 Understand These Results"/>
-                                <connections>
-                                    <segue destination="0je-ph-iCo" kind="show" id="VSM-FO-1Z8"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBx-3e-tpQ">
-                                <rect key="frame" x="16" y="442" width="288" height="23.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fWO-Fx-m1H" firstAttribute="centerY" secondItem="d6A-v4-yY2" secondAttribute="centerY" id="0Tg-1F-pXh"/>
-                            <constraint firstItem="bd0-VM-feS" firstAttribute="leading" secondItem="d6A-v4-yY2" secondAttribute="leadingMargin" id="3DS-o3-E1o"/>
                             <constraint firstItem="m9U-Aq-EdM" firstAttribute="top" secondItem="Xkc-tA-LBP" secondAttribute="bottom" id="4HS-8Z-3c2"/>
                             <constraint firstItem="fWO-Fx-m1H" firstAttribute="leading" secondItem="d6A-v4-yY2" secondAttribute="leadingMargin" id="5Qs-FP-699"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WAl-Tw-3uS" secondAttribute="trailing" id="6tr-6C-i1K"/>
-                            <constraint firstItem="eBx-3e-tpQ" firstAttribute="top" secondItem="fWO-Fx-m1H" secondAttribute="bottom" id="OP1-cj-X6N"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eBx-3e-tpQ" secondAttribute="trailing" id="QqH-br-ISf"/>
-                            <constraint firstItem="WAl-Tw-3uS" firstAttribute="top" secondItem="eBx-3e-tpQ" secondAttribute="bottom" id="T2k-aJ-QEQ"/>
-                            <constraint firstItem="bd0-VM-feS" firstAttribute="top" secondItem="WAl-Tw-3uS" secondAttribute="bottom" id="TEb-lt-gup"/>
-                            <constraint firstItem="bd0-VM-feS" firstAttribute="height" secondItem="eBx-3e-tpQ" secondAttribute="height" id="TNZ-Ep-WsW"/>
+                            <constraint firstItem="fWO-Fx-m1H" firstAttribute="centerY" secondItem="d6A-v4-yY2" secondAttribute="centerY" id="FYN-CS-IaS"/>
                             <constraint firstAttribute="trailing" secondItem="m9U-Aq-EdM" secondAttribute="trailing" id="UUS-Pa-TYu"/>
-                            <constraint firstItem="b4b-0D-RCQ" firstAttribute="top" secondItem="bd0-VM-feS" secondAttribute="bottom" id="aqU-nO-AMi"/>
                             <constraint firstItem="m9U-Aq-EdM" firstAttribute="leading" secondItem="d6A-v4-yY2" secondAttribute="leading" id="gP3-bF-6gv"/>
-                            <constraint firstItem="eBx-3e-tpQ" firstAttribute="leading" secondItem="d6A-v4-yY2" secondAttribute="leadingMargin" id="gd7-eW-aa7"/>
                             <constraint firstItem="fWO-Fx-m1H" firstAttribute="trailing" secondItem="d6A-v4-yY2" secondAttribute="trailingMargin" id="hO1-q6-b8p"/>
-                            <constraint firstItem="bd0-VM-feS" firstAttribute="trailing" secondItem="d6A-v4-yY2" secondAttribute="trailingMargin" id="kA2-28-cZi"/>
-                            <constraint firstItem="WAl-Tw-3uS" firstAttribute="leading" secondItem="d6A-v4-yY2" secondAttribute="leadingMargin" id="lcd-En-4uu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="icons8-Line Chart-100" id="D41-0f-spD"/>
@@ -505,13 +644,13 @@
                                 <rect key="frame" x="16" y="236" width="288" height="96.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Enter a Reddit Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyb-hs-CmM">
-                                        <rect key="frame" x="48" y="0.0" width="192" height="20.5"/>
+                                        <rect key="frame" x="42" y="0.0" width="204" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGH-pT-UJ2">
-                                        <rect key="frame" x="0.0" y="28.5" width="288" height="30"/>
+                                        <rect key="frame" x="16.5" y="28.5" width="255" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -533,7 +672,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="gGH-pT-UJ2" firstAttribute="width" secondItem="dyb-hs-CmM" secondAttribute="width" multiplier="1.5" id="DRd-th-Nlc"/>
+                                    <constraint firstItem="gGH-pT-UJ2" firstAttribute="width" secondItem="dyb-hs-CmM" secondAttribute="width" multiplier="1.25" id="DRd-th-Nlc"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="boj-fC-aqj" userLabel="Info Stack View">
@@ -597,7 +736,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
@@ -608,8 +746,10 @@
                     <connections>
                         <segue destination="ldj-93-cfD" kind="relationship" relationship="viewControllers" id="Gds-MT-7mF"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lcV-Qi-Hoo"/>
+                        <segue destination="ZW4-dm-m5w" kind="relationship" relationship="viewControllers" id="NwU-0U-acz"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-759" y="0.0"/>
         </scene>
@@ -668,9 +808,28 @@
             </objects>
             <point key="canvasLocation" x="-1514" y="0.0"/>
         </scene>
+        <!--Ranking Page View Controller-->
+        <scene sceneID="Lkk-lz-vwJ">
+            <objects>
+                <viewController id="s3P-bR-oKV" customClass="RankingPageViewController" customModule="Karma_Tracker_for_Reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ms-oq-uCI">
+                        <rect key="frame" x="0.0" y="0.0" width="288" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="QI2-eb-ccL" kind="show" identifier="showCommentRanking" id="8w3-wF-btf"/>
+                        <segue destination="4ic-Av-JaC" kind="show" identifier="showPostRanking" id="xat-p1-rSR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6nG-qG-gEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="1225"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Logo" width="512" height="512"/>
+        <image name="icons8-Bar Chart-100" width="16" height="16"/>
         <image name="icons8-Line Chart-100" width="33" height="33"/>
         <image name="icons8-Pie Chart-96" width="32" height="32"/>
     </resources>
