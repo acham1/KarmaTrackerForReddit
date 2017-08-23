@@ -14,6 +14,8 @@
 		AA40F6A21F4AB88A008E3DDE /* RankingBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40F6A11F4AB88A008E3DDE /* RankingBarViewController.swift */; };
 		AA40F6A41F4AE5AC008E3DDE /* KarmaSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40F6A31F4AE5AC008E3DDE /* KarmaSource.swift */; };
 		AA40F6A61F4B755A008E3DDE /* AccountElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40F6A51F4B755A008E3DDE /* AccountElement.swift */; };
+		AA40F6AD1F4BDD3A008E3DDE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40F6AC1F4BDD3A008E3DDE /* SplashViewController.swift */; };
+		AA40F6AF1F4C2021008E3DDE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA40F6AE1F4C2021008E3DDE /* Settings.bundle */; };
 		AA4D85541F46266500C9E182 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D85531F46266500C9E182 /* InformationViewController.swift */; };
 		AA4D85561F464FDB00C9E182 /* String+isValidRedditUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D85551F464FDB00C9E182 /* String+isValidRedditUsername.swift */; };
 		AA4D85581F47B84A00C9E182 /* LoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D85571F47B84A00C9E182 /* LoadingError.swift */; };
@@ -29,7 +31,6 @@
 		AA623A041F3C3C680010E6FF /* Karma_Tracker_for_RedditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA623A031F3C3C680010E6FF /* Karma_Tracker_for_RedditUITests.swift */; };
 		AA623A121F3C3D4A0010E6FF /* UserSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA623A111F3C3D4A0010E6FF /* UserSelectionViewController.swift */; };
 		AA623A141F3C5D910010E6FF /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA623A131F3C5D910010E6FF /* LoadingViewController.swift */; };
-		AA623A161F3C5E170010E6FF /* DetailTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA623A151F3C5E170010E6FF /* DetailTabBarController.swift */; };
 		AA6BAAC11F3F848800CA773D /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BAAC01F3F848800CA773D /* AppConstants.swift */; };
 		AA6BAAC31F3FBCE300CA773D /* SharedNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BAAC21F3FBCE300CA773D /* SharedNetworking.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,9 @@
 		AA40F6A11F4AB88A008E3DDE /* RankingBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingBarViewController.swift; sourceTree = "<group>"; };
 		AA40F6A31F4AE5AC008E3DDE /* KarmaSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KarmaSource.swift; sourceTree = "<group>"; };
 		AA40F6A51F4B755A008E3DDE /* AccountElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountElement.swift; sourceTree = "<group>"; };
+		AA40F6A91F4BA894008E3DDE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AA40F6AC1F4BDD3A008E3DDE /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		AA40F6AE1F4C2021008E3DDE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		AA4D85531F46266500C9E182 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		AA4D85551F464FDB00C9E182 /* String+isValidRedditUsername.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+isValidRedditUsername.swift"; sourceTree = "<group>"; };
 		AA4D85571F47B84A00C9E182 /* LoadingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingError.swift; sourceTree = SOURCE_ROOT; };
@@ -114,7 +118,6 @@
 		AA623A051F3C3C680010E6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA623A111F3C3D4A0010E6FF /* UserSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectionViewController.swift; sourceTree = "<group>"; };
 		AA623A131F3C5D910010E6FF /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		AA623A151F3C5E170010E6FF /* DetailTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTabBarController.swift; sourceTree = "<group>"; };
 		AA6BAAC01F3F848800CA773D /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		AA6BAAC21F3FBCE300CA773D /* SharedNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedNetworking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +160,8 @@
 		AA6239D51F3C3C670010E6FF = {
 			isa = PBXGroup;
 			children = (
+				AA40F6A91F4BA894008E3DDE /* README.md */,
+				AA40F6AE1F4C2021008E3DDE /* Settings.bundle */,
 				AA6239E01F3C3C670010E6FF /* Karma Tracker for Reddit */,
 				AA6239F71F3C3C680010E6FF /* Karma Tracker for RedditTests */,
 				AA623A021F3C3C680010E6FF /* Karma Tracker for RedditUITests */,
@@ -184,7 +189,6 @@
 				AA6239EA1F3C3C670010E6FF /* Assets.xcassets */,
 				AA0EABB71F43AC7100B48590 /* Comment.swift */,
 				AA6239E51F3C3C670010E6FF /* CompositionViewController.swift */,
-				AA623A151F3C5E170010E6FF /* DetailTabBarController.swift */,
 				AA6239E31F3C3C670010E6FF /* HistoryViewController.swift */,
 				AA6239EF1F3C3C670010E6FF /* Info.plist */,
 				AA4D85531F46266500C9E182 /* InformationViewController.swift */,
@@ -197,6 +201,7 @@
 				AA40F69E1F4AAD09008E3DDE /* RankingPageViewController.swift */,
 				AA0EABB51F43AB4B00B48590 /* SharedData.swift */,
 				AA6BAAC21F3FBCE300CA773D /* SharedNetworking.swift */,
+				AA40F6AC1F4BDD3A008E3DDE /* SplashViewController.swift */,
 				AA4D85551F464FDB00C9E182 /* String+isValidRedditUsername.swift */,
 				AA0EABB91F43AC7E00B48590 /* Submission.swift */,
 				AA623A111F3C3D4A0010E6FF /* UserSelectionViewController.swift */,
@@ -357,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA40F6AF1F4C2021008E3DDE /* Settings.bundle in Resources */,
 				AA6239EE1F3C3C670010E6FF /* LaunchScreen.storyboard in Resources */,
 				AA6239EB1F3C3C670010E6FF /* Assets.xcassets in Resources */,
 				AA6239E91F3C3C670010E6FF /* Main.storyboard in Resources */,
@@ -398,7 +404,7 @@
 				AA0EABBA1F43AC7E00B48590 /* Submission.swift in Sources */,
 				AA4D85581F47B84A00C9E182 /* LoadingError.swift in Sources */,
 				AA6239E21F3C3C670010E6FF /* AppDelegate.swift in Sources */,
-				AA623A161F3C5E170010E6FF /* DetailTabBarController.swift in Sources */,
+				AA40F6AD1F4BDD3A008E3DDE /* SplashViewController.swift in Sources */,
 				AA6239E41F3C3C670010E6FF /* HistoryViewController.swift in Sources */,
 				AA40F6A61F4B755A008E3DDE /* AccountElement.swift in Sources */,
 				AA4D85541F46266500C9E182 /* InformationViewController.swift in Sources */,

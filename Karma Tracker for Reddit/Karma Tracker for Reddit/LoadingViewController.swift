@@ -8,12 +8,13 @@
 
 import UIKit
 
+/// View controller to be presented during loading data from Reddit
 class LoadingViewController: UIViewController {
 
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var image: UIImageView! // background image for loading screen
     
-    @IBOutlet weak var currentLoadingItem: UILabel!
-    var username: String?
+    @IBOutlet weak var currentLoadingItem: UILabel! // live label that shows current loaded item
+    var username: String?   // username of account
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class LoadingViewController: UIViewController {
         loadUserData()
     }
     
+    /// load user data into SharedData
     func loadUserData() {
         let ifFinish = {
             self.recursiveGetSubmittedListing(paramAfter: nil,
@@ -50,6 +52,7 @@ class LoadingViewController: UIViewController {
                                     ifFinish: ifFinish)
     }
     
+    /// if received invalid Reddit data, show an alert that will segue back to user selection view
     private func respondToDataFail() {
         let action = UIAlertAction(title: "OK", style: .default, handler: self.loadingErrorHandler)
         let alert =  UIAlertController(title: "Data Error", message: "Sorry! Please check that a valid Reddit username was entered.", preferredStyle: .alert)
@@ -57,16 +60,23 @@ class LoadingViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    /// show alert that will segue to user selection view, if network fails
     private func respondToNetworkFail() {
         let action = UIAlertAction(title: "OK", style: .default, handler: self.loadingErrorHandler)
         self.present(SharedNetworking.networkingAlert(action: action), animated: true)
     }
     
+    /// segue to charts tab controller when finished loading
     private func finishLoading() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         self.performSegue(withIdentifier: "showUserDetails", sender: self)
     }
     
+    /// recursively continue to pull data from user's comments
+    /// - Parameter paramAfter: previous Reddit JSON's 'after' key
+    /// - Parameter ifNetworkFail: to be performed if network error encountered
+    /// - Parameter ifDataFail: to be performed if data error encountered
+    /// - Parameter ifFinish: to be performed when finished loading
     func recursiveGetCommentsListing(paramAfter: String?,
                             ifNetworkFail: @escaping () -> Void,
                             ifDataFail: @escaping () -> Void,
@@ -94,6 +104,8 @@ class LoadingViewController: UIViewController {
                     guard let commentData = comment["data"] as? [String:Any] else {
                         throw LoadingError.couldNotCastToDictionary
                     }
+                    
+                    // create a comment and add to data
                     let score = commentData["score"] as! Int
                     let unixTime = commentData["created_utc"] as! Int
                     let subreddit = commentData["subreddit_name_prefixed"] as! String
@@ -113,6 +125,11 @@ class LoadingViewController: UIViewController {
         })
     }
     
+    /// recursively continue to pull data from user's posts
+    /// - Parameter paramAfter: previous Reddit JSON's 'after' key
+    /// - Parameter ifNetworkFail: to be performed if network error encountered
+    /// - Parameter ifDataFail: to be performed if data error encountered
+    /// - Parameter ifFinish: to be performed when finished loading
     func recursiveGetSubmittedListing(paramAfter: String?,
                                      ifNetworkFail: @escaping () -> Void,
                                      ifDataFail: @escaping () -> Void,
@@ -140,6 +157,8 @@ class LoadingViewController: UIViewController {
                     guard let submittedData = submitted["data"] as? [String:Any] else {
                         throw LoadingError.couldNotCastToDictionary
                     }
+                    
+                    // create a submission and add to data
                     let score = submittedData["score"] as! Int
                     let unixTime = submittedData["created_utc"] as! Int
                     let subreddit = submittedData["subreddit_name_prefixed"] as! String
@@ -159,19 +178,11 @@ class LoadingViewController: UIViewController {
         })
     }
 
+    /// handle error during loading by returning to user selection view
+    /// - Parameter alert: the alert that is calling this action
     func loadingErrorHandler(alert: UIAlertAction) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         performSegue(withIdentifier: "failedLoading", sender: self)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

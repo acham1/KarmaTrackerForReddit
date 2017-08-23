@@ -13,9 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        print("Checking for Initial Launch Value: ")
+        if let date = UserDefaults.standard.object(forKey: "Initial Launch") as? NSDate {
+            print("\tFound initial launch: \(date)")
+        } else {
+            print("\tNone found")
+            UserDefaults.standard.set(NSDate(), forKey: "Initial Launch")
+            print("\tSetting initial launch: \(UserDefaults.standard.object(forKey: "Initial Launch") as! NSDate)")
+        }
         return true
     }
 

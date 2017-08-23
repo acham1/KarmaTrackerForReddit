@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Error that can be encounterd during parsing JSON from Reddit
 enum LoadingError: Error {
     case couldNotCastToDictionary
 }

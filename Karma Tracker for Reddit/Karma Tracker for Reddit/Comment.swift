@@ -8,11 +8,16 @@
 
 import Foundation
 
+// A reddit comment
 class Comment: AccountElement {
     let score: Int
     let unixTime: Int
     let subreddit: String
     
+    /// Constructor sets values for all properties
+    /// - Parameter score: net score of comment
+    /// - Parameter unixTime: unix timestamp of comment creation
+    /// - Parameter subreddit: subreddit enclosing comment
     init(score: Int, unixTime: Int, subreddit: String) {
         self.score = score
         self.unixTime = unixTime

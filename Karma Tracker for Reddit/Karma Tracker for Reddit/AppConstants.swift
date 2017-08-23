@@ -8,11 +8,15 @@
 
 import Foundation
 
+/// Constants for the application
 struct AppConstants {
+
+    /// Preliminary regex for checking user-entered Reddit username
     struct RegexString {
         static let Username = "^[a-zA-Z0-9_-]+$"
     }
-    
+
+    /// URL for Reddit API
     struct APIURL {
         static let Head = "https://reddit.com/user/"
         static let SubmittedTail = "/submitted.json"

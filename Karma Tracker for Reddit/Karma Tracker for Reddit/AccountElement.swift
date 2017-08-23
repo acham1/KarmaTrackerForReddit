@@ -8,9 +8,10 @@
 
 import Foundation
 
+// A class representing one entity that contributes Karma points (e.g. comment or post)
 protocol AccountElement {
-    var score: Int {get}
-    var unixTime: Int {get}
-    var subreddit: String {get}
+    var score: Int {get}        // net score of element
+    var unixTime: Int {get}     // creation timestamp
+    var subreddit: String {get} // name of context subreddit
 
 }

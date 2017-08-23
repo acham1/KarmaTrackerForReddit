@@ -9,21 +9,21 @@
 import UIKit
 import Charts
 
+/// View controller that shows a bar chart ranking top subreddits contributing points to user account
 class RankingBarViewController: UIViewController, IAxisValueFormatter, ChartViewDelegate {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var selectedLabel: UILabel!
-    
-    @IBOutlet weak var barChartView: BarChartView!
-    
-    var sourceType: KarmaSource?
-    var top5: ArraySlice<String>?
+    @IBOutlet weak var titleLabel: UILabel! // title label of the view
+    @IBOutlet weak var selectedLabel: UILabel!  // label showing current selected bar
+    @IBOutlet weak var barChartView: BarChartView!  // featured iOS bar chart view
+    var sourceType: KarmaSource?    // the sourceType this plot is showing (i.e. comments or posts)
+    var top5: ArraySlice<String>?   // top five subreddits to plot
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpBarChart()
     }
-    
+
+    /// set chart properties and load data
     func setUpBarChart() {
         var array: [AccountElement]?
         
@@ -61,6 +61,7 @@ class RankingBarViewController: UIViewController, IAxisValueFormatter, ChartView
             
             let barChartData = BarChartData(dataSet: barChartDataSet)
 
+            // set up chart appearance
             barChartView.data = barChartData
             barChartView.chartDescription = nil
             barChartView.rightAxis.enabled = false
@@ -71,6 +72,9 @@ class RankingBarViewController: UIViewController, IAxisValueFormatter, ChartView
             barChartView.animate(xAxisDuration: 0.5, yAxisDuration: 0.5, easingOption: .easeInBack)
             barChartView.xAxis.yOffset = 0
             barChartView.xAxis.gridLineWidth = 0
+            barChartView.scaleXEnabled = false
+            barChartView.scaleYEnabled = false
+            barChartView.pinchZoomEnabled = false
             barChartView.delegate = self
         }
         
@@ -79,15 +83,10 @@ class RankingBarViewController: UIViewController, IAxisValueFormatter, ChartView
     }
 
     /// Called when a value from an axis is formatted before being drawn.
-    ///
-    /// For performance reasons, avoid excessive calculations and memory allocations inside this method.
-    ///
-    /// - returns: The customized label that is drawn on the x-axis.
-    /// - parameter value:           the value that is currently being drawn
-    /// - parameter axis:            the axis that the value belongs to
-    ///
-    func stringForValue(_ value: Double,
-                        axis: AxisBase?) -> String {
+    /// - Parameter value: the value that is currently being drawn
+    /// - Parameter axis: the axis that the value belongs to
+    /// - Returns: The customized label that is drawn on the x-axis.
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return "\(Int(value) + 1)"
     }
     

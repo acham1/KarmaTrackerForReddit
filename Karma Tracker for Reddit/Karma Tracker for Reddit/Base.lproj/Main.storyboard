@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Kyy-FU-9l8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i3i-kA-WdZ">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -587,6 +587,93 @@
                 <exit id="xTU-f8-XaF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-759" y="-779"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="ZFw-La-JVa">
+            <objects>
+                <viewController id="i3i-kA-WdZ" customClass="SplashViewController" customModule="Karma_Tracker_for_Reddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Qv-JJ-8np"/>
+                        <viewControllerLayoutGuide type="bottom" id="flW-Z2-AKA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uWg-0G-3fn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rZF-2Q-edo">
+                                <rect key="frame" x="60" y="171" width="200" height="226"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Karma Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVT-SG-sbe">
+                                        <rect key="frame" x="4.5" y="0.0" width="191" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="7SS-ZU-tDL">
+                                        <rect key="frame" x="25" y="44" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7SS-ZU-tDL" secondAttribute="height" multiplier="1:1" id="Te2-cg-TbP"/>
+                                            <constraint firstAttribute="width" constant="150" id="dAf-qP-jda"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Reddit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6H-hi-zF5">
+                                        <rect key="frame" x="54" y="202" width="92.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ZHe-wb-vSD"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer: Alan Cham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuG-pJ-EA6">
+                                <rect key="frame" x="75" y="405" width="170" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Tap Anywhere To Begin  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSh-os-Dat">
+                                <rect key="frame" x="62" y="486.5" width="197.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4J-f1-q17">
+                                <rect key="frame" x="16" y="507" width="288" height="61"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dZ-jA-lyf">
+                                <rect key="frame" x="16" y="425.5" width="288" height="61"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F4J-f1-q17" firstAttribute="trailing" secondItem="uWg-0G-3fn" secondAttribute="trailingMargin" id="1NS-2s-EY2"/>
+                            <constraint firstItem="F4J-f1-q17" firstAttribute="top" secondItem="iSh-os-Dat" secondAttribute="bottom" id="3gu-1p-NUM"/>
+                            <constraint firstItem="iSh-os-Dat" firstAttribute="centerX" secondItem="uWg-0G-3fn" secondAttribute="centerX" id="8F0-77-uEO"/>
+                            <constraint firstItem="rZF-2Q-edo" firstAttribute="centerY" secondItem="uWg-0G-3fn" secondAttribute="centerY" id="8aW-M8-uQe"/>
+                            <constraint firstItem="iSh-os-Dat" firstAttribute="top" secondItem="7dZ-jA-lyf" secondAttribute="bottom" id="DfF-i2-CoL"/>
+                            <constraint firstItem="7dZ-jA-lyf" firstAttribute="top" secondItem="PuG-pJ-EA6" secondAttribute="bottom" id="FrQ-yg-RhC"/>
+                            <constraint firstItem="F4J-f1-q17" firstAttribute="height" secondItem="7dZ-jA-lyf" secondAttribute="height" id="Fwf-Cs-bOC"/>
+                            <constraint firstItem="PuG-pJ-EA6" firstAttribute="top" secondItem="rZF-2Q-edo" secondAttribute="bottom" constant="8" id="OAC-c1-4Q0"/>
+                            <constraint firstItem="7dZ-jA-lyf" firstAttribute="leading" secondItem="uWg-0G-3fn" secondAttribute="leadingMargin" id="S4C-B8-Owp"/>
+                            <constraint firstItem="flW-Z2-AKA" firstAttribute="top" secondItem="F4J-f1-q17" secondAttribute="bottom" id="cVf-ta-HWE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7dZ-jA-lyf" secondAttribute="trailing" id="dSz-Pk-5N0"/>
+                            <constraint firstItem="F4J-f1-q17" firstAttribute="leading" secondItem="uWg-0G-3fn" secondAttribute="leadingMargin" id="vhb-am-Pcl"/>
+                            <constraint firstItem="rZF-2Q-edo" firstAttribute="centerX" secondItem="uWg-0G-3fn" secondAttribute="centerX" id="wsb-cA-zNN"/>
+                            <constraint firstItem="PuG-pJ-EA6" firstAttribute="centerX" secondItem="uWg-0G-3fn" secondAttribute="centerX" id="zGE-hg-hip"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tapPrompt" destination="iSh-os-Dat" id="qYa-IW-Voq"/>
+                        <segue destination="Kyy-FU-9l8" kind="show" identifier="closeSplash" id="fVj-r1-Isu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZi-eh-Jvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2240.625" y="-780.63380281690138"/>
         </scene>
         <!--User Selection View Controller-->
         <scene sceneID="dfQ-ej-T6P">

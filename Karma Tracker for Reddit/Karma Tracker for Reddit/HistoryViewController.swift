@@ -9,8 +9,10 @@
 import UIKit
 import Charts
 
+/// View that shows line chart of posts/comments cumulative score history for Reddit account
 class HistoryViewController: UIViewController, IAxisValueFormatter {
     
+    /// featured iOS Charts line chart
     @IBOutlet weak var lineChartView: LineChartView!
     
     override func viewDidLoad() {
@@ -18,8 +20,9 @@ class HistoryViewController: UIViewController, IAxisValueFormatter {
         setUpLineChart()
     }
     
+    /// set bar chart properties and load data
     func setUpLineChart() {
-        lineChartView.noDataText = "This user account has no data for this chart."
+        // set up chart data
         let lineChartData = LineChartData()
         if let comments = setUpCommentsData(), comments.entryCount > 0 {
             lineChartData.addDataSet(comments)
@@ -28,7 +31,9 @@ class HistoryViewController: UIViewController, IAxisValueFormatter {
             lineChartData.addDataSet(posts)
         }
         lineChartView.data = lineChartData.dataSetCount > 0 ? lineChartData : nil
-        
+
+        // set up chart appearance
+        lineChartView.noDataText = "This user account has no data for this chart."
         lineChartView.chartDescription = nil
         lineChartView.xAxis.drawLabelsEnabled = true
         lineChartView.xAxis.labelRotationAngle = 90
@@ -42,6 +47,8 @@ class HistoryViewController: UIViewController, IAxisValueFormatter {
         lineChartView.layer.borderWidth = 1.0
     }
     
+    /// parse comments from SharedData into a data series to plot
+    /// - Returns: LineChartDataSet for the comments series
     func setUpCommentsData() -> LineChartDataSet? {
         guard let comments = SharedData.shared.getComments() else {
             return nil
@@ -52,10 +59,7 @@ class HistoryViewController: UIViewController, IAxisValueFormatter {
         for i in 1...count {
             total = total + comments[count - i].score
             entries.append(ChartDataEntry(x: Double(comments[count - i].unixTime), y: Double(total)))
-            print("\(comments[count - i].score) \(comments[count - i].unixTime) \(total)")
         }
-        
-        print(entries.count)
         
         let lineChartDataSet = LineChartDataSet(values: entries, label: "Comments")
         lineChartDataSet.circleRadius = 6.0
@@ -70,6 +74,8 @@ class HistoryViewController: UIViewController, IAxisValueFormatter {
         return lineChartDataSet
     }
     
+    /// parse posts from SharedData into a data series to plot
+    /// - Returns: LineChartDataSet for the posts series
     func setUpPostsData() -> LineChartDataSet? {
         guard let submissions = SharedData.shared.getSubmissions() else {
             return nil
@@ -80,10 +86,7 @@ class HistoryViewController: UIViewController, IAxisValueFormatter {
         for i in 1...count {
             total = total + submissions[count - i].score
             entries.append(ChartDataEntry(x: Double(submissions[count - i].unixTime), y: Double(total)))
-            print("\(submissions[count - i].score) \(submissions[count - i].unixTime) \(total)")
         }
-        
-        print(entries.count)
         
         let lineChartDataSet = LineChartDataSet(values: entries, label: "Posts")
         lineChartDataSet.circleRadius = 6.0
@@ -100,19 +103,15 @@ class HistoryViewController: UIViewController, IAxisValueFormatter {
     }
     
     /// Called when a value from an axis is formatted before being drawn.
-    ///
-    /// For performance reasons, avoid excessive calculations and memory allocations inside this method.
-    ///
-    /// - returns: The customized label that is drawn on the x-axis.
-    /// - parameter value:           the value that is currently being drawn
-    /// - parameter axis:            the axis that the value belongs to
-    ///
-    func stringForValue(_ value: Double,
-                        axis: AxisBase?) -> String {
+    /// - Parameter value: the value that is currently being drawn
+    /// - Parameter axis: the axis that the value belongs to
+    /// - Returns: The customized label that is drawn on the x-axis.
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let rounded = round(value/1000000.0)
         return "\(rounded/1000.0) bn"
     }
     
+    /// Used for unwinding segue from explanation view
     @IBAction func finishExplanation(from segue: UIStoryboardSegue) {
         // Do nothing
     }

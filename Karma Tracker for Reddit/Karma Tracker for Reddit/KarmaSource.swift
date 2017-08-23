@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// An enum of possible karma sources
 enum KarmaSource {
     case comments
     case posts
