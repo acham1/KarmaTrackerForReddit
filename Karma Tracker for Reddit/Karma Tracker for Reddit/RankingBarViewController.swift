@@ -94,7 +94,11 @@ class RankingBarViewController: UIViewController, IAxisValueFormatter, ChartView
     /// - parameter entry: The selected Entry.
     /// - parameter highlight: The corresponding highlight object that contains information about the highlighted position such as dataSetIndex etc.
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        print("Selected bar at x-index \(Int(entry.x))\n\tUpdating label")
         selectedLabel.text = top5![Int(entry.x)]
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        print("Selected \(sourceType!) page of ranking tab")
+    }
 }

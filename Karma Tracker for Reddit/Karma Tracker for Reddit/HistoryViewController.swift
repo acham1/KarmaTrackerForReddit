@@ -113,7 +113,11 @@ class HistoryViewController: UIViewController, IAxisValueFormatter {
     
     /// Used for unwinding segue from explanation view
     @IBAction func finishExplanation(from segue: UIStoryboardSegue) {
-        // Do nothing
+        print("Tapped done button\n\tReturning from explanation view")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("Selected history tab")
     }
 
 }

@@ -51,6 +51,10 @@ class CompositionViewController: UIViewController, IValueFormatter {
     func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
         return "\(Int(value))"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("Selected composition tab")
+    }
 
 }
 

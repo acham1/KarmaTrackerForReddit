@@ -33,6 +33,7 @@
 		AA623A141F3C5D910010E6FF /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA623A131F3C5D910010E6FF /* LoadingViewController.swift */; };
 		AA6BAAC11F3F848800CA773D /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BAAC01F3F848800CA773D /* AppConstants.swift */; };
 		AA6BAAC31F3FBCE300CA773D /* SharedNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6BAAC21F3FBCE300CA773D /* SharedNetworking.swift */; };
+		AAFFBDFB1F4E0BFE001BBE35 /* ExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFFBDFA1F4E0BFE001BBE35 /* ExplanationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		AA623A131F3C5D910010E6FF /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		AA6BAAC01F3F848800CA773D /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		AA6BAAC21F3FBCE300CA773D /* SharedNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedNetworking.swift; sourceTree = "<group>"; };
+		AAFFBDFA1F4E0BFE001BBE35 /* ExplanationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplanationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				AA6239EA1F3C3C670010E6FF /* Assets.xcassets */,
 				AA0EABB71F43AC7100B48590 /* Comment.swift */,
 				AA6239E51F3C3C670010E6FF /* CompositionViewController.swift */,
+				AAFFBDFA1F4E0BFE001BBE35 /* ExplanationViewController.swift */,
 				AA6239E31F3C3C670010E6FF /* HistoryViewController.swift */,
 				AA6239EF1F3C3C670010E6FF /* Info.plist */,
 				AA4D85531F46266500C9E182 /* InformationViewController.swift */,
@@ -401,6 +404,7 @@
 				AA40F6A21F4AB88A008E3DDE /* RankingBarViewController.swift in Sources */,
 				AA6BAAC11F3F848800CA773D /* AppConstants.swift in Sources */,
 				AA4D85561F464FDB00C9E182 /* String+isValidRedditUsername.swift in Sources */,
+				AAFFBDFB1F4E0BFE001BBE35 /* ExplanationViewController.swift in Sources */,
 				AA0EABBA1F43AC7E00B48590 /* Submission.swift in Sources */,
 				AA4D85581F47B84A00C9E182 /* LoadingError.swift in Sources */,
 				AA6239E21F3C3C670010E6FF /* AppDelegate.swift in Sources */,

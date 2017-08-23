@@ -16,6 +16,7 @@ class InformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         versionLabel.text = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        print("Tapped information button\n\tShowing information view")
     }
 
 }

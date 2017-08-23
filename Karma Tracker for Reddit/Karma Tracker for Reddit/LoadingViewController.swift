@@ -87,6 +87,7 @@ class LoadingViewController: UIViewController {
             commentsURL.append("&after=\(paramAfter)")
         }
         
+        print("Attempting to retrieve data at \(commentsURL)")
         SharedNetworking.shared.getJSON(url: commentsURL, handledBy: {
             (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error {
@@ -140,6 +141,7 @@ class LoadingViewController: UIViewController {
             submittedURL.append("&after=\(paramAfter)")
         }
         
+        print("Attempting to retrieve data at \(submittedURL)")
         SharedNetworking.shared.getJSON(url: submittedURL, handledBy: {
             (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error {
@@ -181,6 +183,7 @@ class LoadingViewController: UIViewController {
     /// handle error during loading by returning to user selection view
     /// - Parameter alert: the alert that is calling this action
     func loadingErrorHandler(alert: UIAlertAction) {
+        print("Tapped ok to acknowledge loading error\n\tReturning to user selection view")
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         performSegue(withIdentifier: "failedLoading", sender: self)
     }

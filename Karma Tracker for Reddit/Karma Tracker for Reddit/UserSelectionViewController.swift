@@ -116,7 +116,15 @@ class UserSelectionViewController: UIViewController, UITextFieldDelegate {
 
     /// return to this view controller from another higher in the stack
     @IBAction func unwind(from segue: UIStoryboardSegue) {
-        // Do nothing
+        switch(segue.identifier ?? "") {
+        case "reselect":
+            print("Tapped close button\n\tReturning to user selection view")
+        case "closeInformation":
+            print("Tapped done button\n\tReturing to user selection view")
+        default:
+            return
+            // Do nothing
+        }
     }
 
 }
