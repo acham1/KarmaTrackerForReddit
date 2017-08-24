@@ -96,7 +96,6 @@
 		AA40F6A11F4AB88A008E3DDE /* RankingBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingBarViewController.swift; sourceTree = "<group>"; };
 		AA40F6A31F4AE5AC008E3DDE /* KarmaSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KarmaSource.swift; sourceTree = "<group>"; };
 		AA40F6A51F4B755A008E3DDE /* AccountElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountElement.swift; sourceTree = "<group>"; };
-		AA40F6A91F4BA894008E3DDE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AA40F6AC1F4BDD3A008E3DDE /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		AA40F6AE1F4C2021008E3DDE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		AA4D85531F46266500C9E182 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +161,6 @@
 		AA6239D51F3C3C670010E6FF = {
 			isa = PBXGroup;
 			children = (
-				AA40F6A91F4BA894008E3DDE /* README.md */,
 				AA40F6AE1F4C2021008E3DDE /* Settings.bundle */,
 				AA6239E01F3C3C670010E6FF /* Karma Tracker for Reddit */,
 				AA6239F71F3C3C680010E6FF /* Karma Tracker for RedditTests */,
